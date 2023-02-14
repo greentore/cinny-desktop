@@ -25,7 +25,7 @@ async function createTauriRelease() {
   };
 
   const tagsResult = await repos.listTags({ ...repoMetaData, per_page: 10, page: 1 });
-  const latestTag = tagsResult.data.find((tag) => tag.name.startsWith("v"));
+  const latestTag = tagsResult.data.find((tag) => tag.name.startsWith("v") && tag.name.includes("g"));
   console.log(latestTag);
 
   const latestRelease = await repos.getReleaseByTag({ ...repoMetaData, tag: latestTag.name });
