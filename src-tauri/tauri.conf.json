@@ -1,6 +1,6 @@
 {
   "package": {
-    "productName": "Cinny",
+    "productName": "Greeny",
     "version": "2.2.6"
   },
   "build": {
@@ -13,7 +13,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "in.cinny.app",
+      "identifier": "cc.greeny.app",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -51,7 +51,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-          "https://github.com/greentore/cinny-desktop/releases/download/tauri/release.json"
+          "https://github.com/greentore/greeny-desktop/releases/download/tauri/release.json"
       ],
       "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDUzN0ZDNkQxMzgyM0ExNkEKUldScW9TTTQwY1ovVTlYYjVYaUdYVVBFdkFQYUxjUDAzUDc0TlRCSGRZbjl0N1NxT2t5aW1qM3kK"
@@ -61,7 +61,7 @@
     },
     "windows": [
       {
-        "title": "Cinny",
+        "title": "Greeny",
         "width": 1024,
         "height": 724,
         "center": true,
