@@ -19,7 +19,7 @@ pub fn window_event_handler<R: tauri::Runtime>(
             app.tray_handle_by_id(TRAY_LABEL)
                 .unwrap()
                 .get_item("toggle")
-                .set_title("Show Cinny")
+                .set_title("Show Greeny")
                 .unwrap();
         }
         _ => {}
@@ -28,7 +28,7 @@ pub fn window_event_handler<R: tauri::Runtime>(
 
 /// Build the system tray object
 pub fn system_tray() -> SystemTray {
-    let toggle = CustomMenuItem::new("toggle".to_owned(), "Hide Cinny");
+    let toggle = CustomMenuItem::new("toggle".to_owned(), "Hide Greeny");
     let quit = CustomMenuItem::new("quit".to_owned(), "Quit");
     let menu = SystemTrayMenu::new()
         .add_item(toggle)
@@ -47,7 +47,7 @@ pub fn toggle_window_state<R: tauri::Runtime>(window: Window<R>, tray_handle: Sy
         window.hide().unwrap();
         tray_handle
             .get_item("toggle")
-            .set_title("Show Cinny")
+            .set_title("Show Greeny")
             .unwrap();
     } else {
         window.unminimize().unwrap();
@@ -55,7 +55,7 @@ pub fn toggle_window_state<R: tauri::Runtime>(window: Window<R>, tray_handle: Sy
         window.set_focus().unwrap();
         tray_handle
             .get_item("toggle")
-            .set_title("Hide Cinny")
+            .set_title("Hide Greeny")
             .unwrap();
     };
 }
