@@ -48,13 +48,13 @@ jobs:
           echo "${Env:TAURI_VERSION}"
         shell: pwsh
       - name: Move msi
-        run: Move-Item "src-tauri\target\release\bundle\msi\Cinny_${{ env.TAURI_VERSION }}_x64_en-US.msi" "src-tauri\target\release\bundle\msi\Greeny_desktop-x86_64.msi"
+        run: Move-Item "src-tauri\target\release\bundle\msi\Greeny_${{ env.TAURI_VERSION }}_x64_en-US.msi" "src-tauri\target\release\bundle\msi\Greeny_desktop-x86_64.msi"
         shell: pwsh
       - name: Move msi.zip
-        run: Move-Item "src-tauri\target\release\bundle\msi\Cinny_${{ env.TAURI_VERSION }}_x64_en-US.msi.zip" "src-tauri\target\release\bundle\msi\Greeny_desktop-x86_64.msi.zip"
+        run: Move-Item "src-tauri\target\release\bundle\msi\Greeny_${{ env.TAURI_VERSION }}_x64_en-US.msi.zip" "src-tauri\target\release\bundle\msi\Greeny_desktop-x86_64.msi.zip"
         shell: pwsh
       - name: Move msi.zip.sig
-        run: Move-Item "src-tauri\target\release\bundle\msi\Cinny_${{ env.TAURI_VERSION }}_x64_en-US.msi.zip.sig" "src-tauri\target\release\bundle\msi\Greeny_desktop-x86_64.msi.zip.sig"
+        run: Move-Item "src-tauri\target\release\bundle\msi\Greeny_${{ env.TAURI_VERSION }}_x64_en-US.msi.zip.sig" "src-tauri\target\release\bundle\msi\Greeny_desktop-x86_64.msi.zip.sig"
         shell: pwsh
       - name: Upload tagged release
         uses: softprops/action-gh-release@1e07f4398721186383de40550babbdf2b84acfc5
@@ -108,13 +108,13 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::$(jq .package.version src-tauri/tauri.conf.json | tr -d '"')
       - name: Move deb
-        run: mv "src-tauri/target/release/bundle/deb/cinny_${{ steps.vars.outputs.tag }}_amd64.deb" "src-tauri/target/release/bundle/deb/Greeny_desktop-x86_64.deb"
+        run: mv "src-tauri/target/release/bundle/deb/greeny_${{ steps.vars.outputs.tag }}_amd64.deb" "src-tauri/target/release/bundle/deb/Greeny_desktop-x86_64.deb"
       - name: Move AppImage
-        run: mv "src-tauri/target/release/bundle/appimage/cinny_${{ steps.vars.outputs.tag }}_amd64.AppImage" "src-tauri/target/release/bundle/appimage/Greeny_desktop-x86_64.AppImage"
+        run: mv "src-tauri/target/release/bundle/appimage/greeny_${{ steps.vars.outputs.tag }}_amd64.AppImage" "src-tauri/target/release/bundle/appimage/Greeny_desktop-x86_64.AppImage"
       - name: Move AppImage.tar.gz
-        run: mv "src-tauri/target/release/bundle/appimage/cinny_${{ steps.vars.outputs.tag }}_amd64.AppImage.tar.gz" "src-tauri/target/release/bundle/appimage/Greeny_desktop-x86_64.AppImage.tar.gz"
+        run: mv "src-tauri/target/release/bundle/appimage/greeny_${{ steps.vars.outputs.tag }}_amd64.AppImage.tar.gz" "src-tauri/target/release/bundle/appimage/Greeny_desktop-x86_64.AppImage.tar.gz"
       - name: Move AppImage.tar.gz.sig
-        run: mv "src-tauri/target/release/bundle/appimage/cinny_${{ steps.vars.outputs.tag }}_amd64.AppImage.tar.gz.sig" "src-tauri/target/release/bundle/appimage/Greeny_desktop-x86_64.AppImage.tar.gz.sig"
+        run: mv "src-tauri/target/release/bundle/appimage/greeny_${{ steps.vars.outputs.tag }}_amd64.AppImage.tar.gz.sig" "src-tauri/target/release/bundle/appimage/Greeny_desktop-x86_64.AppImage.tar.gz.sig"
       - name: Upload tagged release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844
         with:
@@ -163,11 +163,11 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::$(jq .package.version src-tauri/tauri.conf.json | tr -d '"')
       - name: Move dmg
-        run: mv "src-tauri/target/release/bundle/dmg/Cinny_${{ steps.vars.outputs.tag }}_x64.dmg" "src-tauri/target/release/bundle/dmg/Greeny_desktop-x86_64.dmg"
+        run: mv "src-tauri/target/release/bundle/dmg/Greeny_${{ steps.vars.outputs.tag }}_x64.dmg" "src-tauri/target/release/bundle/dmg/Greeny_desktop-x86_64.dmg"
       - name: Move app.tar.gz
-        run: mv "src-tauri/target/release/bundle/macos/Cinny.app.tar.gz" "src-tauri/target/release/bundle/macos/Greeny_desktop-x86_64.app.tar.gz"
+        run: mv "src-tauri/target/release/bundle/macos/Greeny.app.tar.gz" "src-tauri/target/release/bundle/macos/Greeny_desktop-x86_64.app.tar.gz"
       - name: Move app.tar.gz.sig
-        run: mv "src-tauri/target/release/bundle/macos/Cinny.app.tar.gz.sig" "src-tauri/target/release/bundle/macos/Greeny_desktop-x86_64.app.tar.gz.sig"
+        run: mv "src-tauri/target/release/bundle/macos/Greeny.app.tar.gz.sig" "src-tauri/target/release/bundle/macos/Greeny_desktop-x86_64.app.tar.gz.sig"
       - name: Upload tagged release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844
         with:
